@@ -34,8 +34,21 @@ public class Factorial {
 		*/
 
 		//YOUR CODE STARTS HERE
-
-		return -1;
+		 // Check if scanner input is correct.
+		 // if input is not convertible to integer catch the "NumberFormatException" error that is returned by Integer.parseInt
+		 // return the print statement
+		 String line = scanner.nextLine();
+		 try{
+			this.num = Integer.parseInt(line);
+		 } catch (NumberFormatException e) {
+			 this.printStream.print("Invalid entry. Please enter an integer between 1 and 10, inclusive.");
+			 return -1;
+		 }
+		 if(this.num<1 || this.num >10){
+			 this.printStream.print("Invalid entry. Please enter an integer between 1 and 10, inclusive.");
+			 return -1;
+		 }
+		 return this.num;
 
 		//YOUR CODE ENDS HERE
 		 
@@ -53,7 +66,9 @@ public class Factorial {
 		 
 		int result = 1;
 		//YOUR CODE STARTS HERE
-
+		 for(int i = 1; i <= num; i++){
+			 result*=i;
+		 }
  
 
 		//YOUR CODE ENDS HERE
